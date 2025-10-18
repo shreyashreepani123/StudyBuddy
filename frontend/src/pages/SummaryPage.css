@@ -1,0 +1,171 @@
+/* === Glassmorphic Summary Page (Theme Adaptive) === */
+
+:root {
+  /* Default (Dark mode) */
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --text-primary: #f1f1f1;
+  --text-secondary: #b3b9d3;
+  --accent: #3b82f6;
+  --accent-glow: rgba(59, 130, 246, 0.6);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --shadow-color: rgba(0, 0, 0, 0.35);
+  --inner-glow: rgba(59, 130, 246, 0.15);
+}
+
+.light-mode {
+  /* Light Theme Overrides */
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --accent: #2563eb;
+  --accent-glow: rgba(37, 99, 235, 0.5);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.15);
+  --inner-glow: rgba(37, 99, 235, 0.08);
+}
+
+/* === Container === */
+.summary-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* === Main Card === */
+.glass-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 95%;
+  max-width: 900px;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 40px var(--shadow-color);
+  color: var(--text-primary);
+  text-align: center;
+  animation: fadeUp 0.8s ease;
+  margin: 0 auto;
+}
+
+/* === Title + Subtitle === */
+.summary-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 12px var(--accent-glow);
+}
+
+.summary-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+/* === Button === */
+.summary-btn {
+  background: linear-gradient(90deg, var(--accent), #06b6d4);
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 0 18px var(--accent-glow);
+}
+
+.light-mode .summary-btn {
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(37, 99, 235, 0.4);
+}
+
+.summary-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 28px var(--accent-glow);
+}
+
+.summary-btn.loading {
+  background: linear-gradient(90deg, #818cf8, #06b6d4);
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+/* === Summary Output === */
+.summary-output {
+  margin-top: 2.2rem;
+  background: var(--card-bg);
+  padding: 1.8rem;
+  border-radius: 16px;
+  text-align: left;
+  color: var(--text-primary);
+  line-height: 1.6;
+  border-left: 4px solid var(--accent);
+  box-shadow: inset 0 0 20px var(--inner-glow);
+}
+
+.summary-output h3 {
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.summary-output pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* === Animations === */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 1.8rem;
+  }
+
+  .summary-title {
+    font-size: 1.8rem;
+  }
+
+  .summary-btn {
+    width: 100%;
+  }
+
+  .summary-output pre {
+    font-size: 0.95rem;
+  }
+}

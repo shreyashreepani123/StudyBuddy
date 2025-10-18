@@ -1,0 +1,139 @@
+/* === Glassmorphic Navbar (Dark + Light Theme Adaptive) === */
+
+/* ===== THEME VARIABLES ===== */
+:root {
+  /* Default (Dark Mode) */
+  --navbar-bg: rgba(15, 23, 42, 0.4);
+  --navbar-border: rgba(255, 255, 255, 0.1);
+  --navbar-shadow: rgba(0, 0, 0, 0.25);
+
+  --text-primary: #ffffff;
+  --text-secondary: #e5e7eb;
+  --hover-color: #38bdf8;
+  --active-glow: rgba(79, 195, 255, 0.8);
+  --logo-glow: rgba(255, 255, 255, 0.4);
+}
+
+.light-mode {
+  /* Light Theme Overrides */
+  --navbar-bg: rgba(255, 255, 255, 0.5);
+  --navbar-border: rgba(0, 0, 0, 0.08);
+  --navbar-shadow: rgba(0, 0, 0, 0.15);
+
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --hover-color: #2563eb;
+  --active-glow: rgba(37, 99, 235, 0.7);
+  --logo-glow: rgba(0, 0, 0, 0.2);
+}
+
+/* ===== NAVBAR BASE ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--navbar-border);
+  z-index: 1000;
+  box-shadow: 0 2px 8px var(--navbar-shadow);
+  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ===== BRAND SECTION ===== */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.navbar-logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 10px var(--logo-glow);
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo-img:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.navbar-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px var(--logo-glow);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* ===== NAV LINKS ===== */
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--hover-color);
+  transform: scale(1.1);
+  text-shadow: 0 0 10px var(--hover-color);
+}
+
+/* ===== ACTIVE STATE (glow animation) ===== */
+.nav-link.active {
+  color: var(--hover-color);
+  text-shadow: 0 0 15px var(--active-glow), 0 0 30px var(--active-glow);
+  animation: shineGlow 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes shineGlow {
+  0% {
+    text-shadow: 0 0 10px var(--active-glow), 0 0 25px var(--active-glow);
+    color: var(--hover-color);
+  }
+  50% {
+    text-shadow: 0 0 30px var(--active-glow), 0 0 50px var(--active-glow);
+    color: var(--hover-color);
+  }
+  100% {
+    text-shadow: 0 0 15px var(--active-glow), 0 0 30px var(--active-glow);
+  }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 0.6rem;
+  }
+
+  .navbar-logo {
+    margin-bottom: 0.4rem;
+    font-size: 1.4rem;
+  }
+}

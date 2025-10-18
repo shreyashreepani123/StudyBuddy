@@ -1,0 +1,31 @@
+{
+  "name": "study_buddy_backend",
+  "version": "1.0.0",
+  "description": "Backend server for StudyBuddy app using Express and OpenAI",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "openai": "^4.104.0",
+    "pdf-parse-fixed": "^1.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "keywords": [
+    "express",
+    "openai",
+    "pdf-parser",
+    "study-buddy"
+  ],
+  "author": "Your Name",
+  "license": "ISC"
+}
