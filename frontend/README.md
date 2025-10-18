@@ -1,16 +1,56 @@
-# React + Vite
+# 🧩 StudyBuddy — AI-Powered Study Assistant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 **StudyBuddy** is an AI-powered web app that helps students **generate summaries**, **create flashcards**, **auto-generate quizzes**, and even **chat** with their notes.  
+Built with **React (Vite)** for the frontend and **Express.js (Node)** for the backend — powered by **OpenAI GPT-4o-mini** for intelligence.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Features
 
-## React Compiler
+✨ **AI-Powered Summarization** – Automatically summarize large notes or PDFs into concise key points.  
+🧠 **Quiz Generator** – Generate smart quiz questions and answers from your notes.  
+💡 **Flashcards** – Instantly convert topics into question–answer flashcards for revision.  
+📄 **PDF Upload Support** – Upload and extract text directly from PDFs.  
+💬 **Ask AI** – Ask questions directly from your notes (context-aware responses).  
+🎨 **Beautiful UI** – Dark-mode enabled starry theme with interactive animations.  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🏗️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Layer | Technology |
+|-------|-------------|
+| **Frontend** | React + Vite + Axios |
+| **Backend** | Node.js + Express |
+| **AI Engine** | OpenAI GPT-4o-mini |
+| **File Parsing** | pdf-parse-fixed |
+| **Styling** | TailwindCSS + Custom CSS |
+| **Version Control** | Git + GitHub |
+
+---
+
+## 📁 Project Structure
+
+```bash
+study_buddy/
+├── frontend/                      # React + Vite frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── components/            # Navbar, Flashcard, Quiz, etc.
+│   │   ├── pages/                 # Learn, Quiz, Summary, Upload, etc.
+│   │   ├── assets/                # Icons, images, etc.
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend/                       # Node.js + Express backend
+│   ├── server.js                  # Main server file
+│   ├── package.json
+│   ├── .env                       # (Contains your OpenAI API key)
+│   └── uploads/                   # Temporary PDF uploads
+│
+├── .gitignore
+├── README.md
+└── package-lock.json
